@@ -15,7 +15,7 @@ namespace SeleniumCSharp.Tests
         public void Setup()
         {
             webDriver.Navigate().GoToUrl("https://www.post.at/");
-            //webDriver.Manage().Window.Maximize();
+            webDriver.Manage().Window.Maximize();
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
@@ -30,8 +30,8 @@ namespace SeleniumCSharp.Tests
                                    
         }
 
-        //[TearDown]
-        //public void TearDown() => webDriver.Quit();
+        [TearDown]
+        public void TearDown() => webDriver.Quit();
 
     }
 }
